@@ -30,15 +30,20 @@ $(document).ready(function(){
 
 	
 	$("#square").click(function(){
-		$.getJSON("", function(result){
+		$.getJSON("https://api.ed.gov/data/crdc_enrollment_2013-14?api_key=YENVlIrW33aw9NXeUrDVgFLWKOxJWp2NWYm07DV7", function(result){
+
 	        $.each(result, function(i, field){
+	            console.log(field);
+	            $.each(field, function(k, f){
+	            	$("#square").append(f.LEA_NAME + "<br>");	
+	            })
 	            
 	        });
+
 	    });
 
 
 	});
-
 
 });
 
